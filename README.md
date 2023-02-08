@@ -14,3 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+- 🔭 I’m currently working on [ExploreBTK](https://explorebtk.com/) its my own product.
+- 🌱 I’m currently learning advance TypeScript and Design Patterns.  
+- 👯 I’m looking to collaborate on challenging work.
+- 📫 How to reach me: furqan.khanzada@gmail.com
