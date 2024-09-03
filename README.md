@@ -3,9 +3,11 @@
 ![](https://img.shields.io/github/stars/furqankhanzada?style=social)<br>
 ### Hey 👋 I'm Muhammad Furqan ***and I ❤️ Coding***
 
-**Field of interests**: Product Development, SAAS, Full-Stack Development
+I'm a software developer from **Karachi, Pakistan** Focused on creating impactful web and mobile applications that improve lives
 
 **Website**: [furqan.codes](https://furqan.codes)
+
+**Profiles**: [Upwork](https://www.upwork.com/fl/~013a204a16ace5922f)
 
 ### Skills 🛠️
 - **Languages**: JavaScript, TypeScript, PHP
