@@ -19,11 +19,9 @@ export default function Header() {
                   Home
                 </NavigationMenuLink>
               </Link>
-              <a href="https://www.upwork.com/fl/muhammadf447" target="_blank">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Upwork
-                </NavigationMenuLink>
-              </a>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank" href="https://www.upwork.com/fl/muhammadf447">
+                Upwork
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
