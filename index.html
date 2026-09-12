@@ -43,10 +43,15 @@
 <link rel="stylesheet" href="/styles.css">
 
 <!-- Consent Mode v2 defaults. MUST stay above the GTM snippet: tags that fire
-     before these defaults land would set cookies without consent. -->
+     before these defaults land would set cookies without consent.
+     Denied in the EEA, UK and Switzerland, where consent is required;
+     granted elsewhere. Google resolves the region server-side, so this holds
+     even when the banner below never appears. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
+
+  // EU 27 + Iceland, Liechtenstein, Norway (EEA) + United Kingdom + Switzerland.
   gtag("consent", "default", {
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -54,17 +59,35 @@
     analytics_storage: "denied",
     functionality_storage: "granted",
     security_storage: "granted",
-    wait_for_update: 500
+    wait_for_update: 500,
+    region: [
+      "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR",
+      "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK",
+      "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"
+    ]
   });
-  // Re-apply an earlier choice before GTM loads, so a returning visitor
-  // is measured from their first pageview rather than their second.
+
+  // Everywhere else.
+  gtag("consent", "default", {
+    ad_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+    analytics_storage: "granted",
+    functionality_storage: "granted",
+    security_storage: "granted"
+  });
+
+  // Replay a stored choice — either direction — before GTM loads, so a
+  // returning visitor is measured from their first pageview rather than their
+  // second, and a previous "no" outranks the granted default above.
   try {
-    if (localStorage.getItem("fc-consent") === "granted") {
+    var fcC = localStorage.getItem("fc-consent");
+    if (fcC === "granted" || fcC === "denied") {
       gtag("consent", "update", {
-        ad_storage: "granted",
-        ad_user_data: "granted",
-        ad_personalization: "granted",
-        analytics_storage: "granted"
+        ad_storage: fcC,
+        ad_user_data: fcC,
+        ad_personalization: fcC,
+        analytics_storage: fcC
       });
     }
   } catch (e) {}

@@ -54,6 +54,21 @@
     try { return localStorage.getItem("fc-consent"); } catch (e) { return null; }
   }
 
+  // Only ask where consent is legally required. The enforcement is Google's
+  // region-scoped default above, which uses its own server-side geo; this is
+  // just whether to show the banner, so a wrong guess costs analytics, never
+  // a cookie set without permission. Timezone is used because it needs no
+  // third-party geo lookup — which would itself be a tracking request.
+  function consentRequiredHere() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      return tz.indexOf("Europe/") === 0 || tz === "Atlantic/Reykjavik" ||
+        tz === "Atlantic/Canary" || tz === "Atlantic/Madeira" || tz === "Atlantic/Azores";
+    } catch (e) {
+      return false;
+    }
+  }
+
   function decide(choice) {
     try { localStorage.setItem("fc-consent", choice); } catch (e) {}
     if (typeof window.gtag === "function") {
@@ -69,7 +84,7 @@
   }
 
   if (consent && accept && decline) {
-    if (!storedConsent()) consent.removeAttribute("hidden");
+    if (!storedConsent() && consentRequiredHere()) consent.removeAttribute("hidden");
     accept.addEventListener("click", function () { decide("granted"); });
     decline.addEventListener("click", function () { decide("denied"); });
   }

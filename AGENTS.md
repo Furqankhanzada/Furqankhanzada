@@ -19,9 +19,15 @@ unless the owner explicitly asks.
   hex value in a rule.
 - The inline script in `<head>` sets `data-theme` before first paint. Do not move it to `main.js` —
   that reintroduces the theme flash.
-- The Consent Mode `default` block must stay **above** the GTM snippet in `<head>`. Tags that fire
-  before those defaults land would set cookies without consent. The banner in `main.js` only
-  records the choice (`localStorage["fc-consent"]`) and sends `consent: update`.
+- The two Consent Mode `default` blocks must stay **above** the GTM snippet in `<head>`, in order:
+  the `region`-scoped denied one first, the global granted one second. Tags that fire before those
+  defaults land would set cookies without consent, and swapping the order makes the global grant
+  win everywhere. The stored-choice replay must stay in the `<head>` too — in `main.js` it would
+  run after GTM and lose the first pageview, and a stored "denied" would be briefly overridden.
+- The banner in `main.js` only decides whether to *ask*; enforcement is Google's region default.
+  It appears on European timezones only, so a wrong guess costs analytics, never a cookie set
+  without permission. Don't "fix" it by adding a geo-IP lookup — that's a tracking request of its
+  own, made before consent.
 
 ## Content lives in three places
 
