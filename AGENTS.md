@@ -9,7 +9,8 @@ unless the owner explicitly asks.
 - Everything in the repo root is served verbatim by GitHub Pages. A file you add is a file that
   ships.
 - Reference assets with root-relative paths (`/styles.css`), not relative ones.
-- Keep `index.html`, `styles.css` and `main.js` as the only three page files. New styles go in
+- Keep `index.html`, `styles.css` and `main.js` as the only three page files.
+  `README.md` is the GitHub **profile** README, not this site's docs — those live in `SITE.md`. New styles go in
   `styles.css`, not in `<style>` blocks or inline `style=` attributes.
 - `main.js` is plain ES5-compatible script in an IIFE, loaded with `defer`. No modules, no imports,
   no dependencies.
@@ -38,5 +39,5 @@ Open `index.html` in a browser and check:
 
 ## Deployment
 
-Push to this branch. GitHub Pages serves the root. `CNAME` holds the custom domain and `.nojekyll`
+Push to `main`. GitHub Pages serves its root. `CNAME` holds the custom domain and `.nojekyll`
 stops Jekyll processing — do not delete either.
