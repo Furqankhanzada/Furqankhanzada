@@ -10,11 +10,13 @@ I'm a software developer from **Karachi, Pakistan** Focused on creating impactfu
 **Profiles**: [Upwork](https://www.upwork.com/fl/~013a204a16ace5922f), [LinkedIn](https://www.linkedin.com/in/muhammad-furqan-khanzada/)
 
 ### Skills 🛠️
-- **Languages**: JavaScript, TypeScript, PHP
+- **Languages**: JavaScript, TypeScript, [Python](https://www.python.org/), PHP
 - **Frameworks / Libraries**: [React](https://react.dev/), [ReactNative](https://reactnative.dev/), [Next](https://nextjs.org/), [Expo](https://expo.dev/), [Nest](https://nestjs.com/), [Meteor](https://www.meteor.com/), [WordPress](https://wordpress.org/)
+- **AI**: [Claude Code](https://www.anthropic.com/claude-code), LLM Integration (Claude, OpenAI), [MCP](https://modelcontextprotocol.io/), ML Integration
 - **UI Frameworks**: [Tailwind UI](https://tailwindui.com), [shadcn/ui](https://ui.shadcn.com/), [Aceternity UI](https://ui.aceternity.com), [Bootstrap](https://getbootstrap.com/), [MUI](https://mui.com/)
-- **Databases**: MongoDB, MySQL, Postgres
-- **DevOps**: Linux, Git, GitHub Actions, Docker, AWS (S3, Ec2, Route53, SES, Loadbalancer, Lightsail, AppSync, Amplify etc...)
+- **Databases**: MongoDB, [Postgres](https://www.postgresql.org/), MySQL, [ClickHouse](https://clickhouse.com/)
+- **DevOps**: Linux, Git, GitHub Actions, Docker, AWS (S3, Ec2, Route53, SES, Loadbalancer, Lightsail, AppSync, Amplify etc...), [Cloudflare](https://www.cloudflare.com/) (Workers, R2, KV, Queues), [Coolify](https://coolify.io/)
+- **Testing**: [Jest](https://jestjs.io/), [Vitest](https://vitest.dev/), [Playwright](https://playwright.dev/)
 - **Others**: GraphQL, RestAPIs, HTML, Css, jQuery, Figma to Code, Mobile Development, Web Development
 
 ### Education 🎓

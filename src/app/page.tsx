@@ -42,11 +42,13 @@ const work = [
 ];
 
 const skills = [
-  { group: "Languages", items: ["JavaScript", "TypeScript", "PHP"] },
+  { group: "Languages", items: ["JavaScript", "TypeScript", "Python", "PHP"] },
   { group: "Frameworks", items: ["React", "React Native", "Next.js", "Expo", "NestJS", "Meteor", "WordPress"] },
+  { group: "AI", items: ["Claude Code", "LLM Integration (Claude, OpenAI)", "MCP", "ML Integration"] },
   { group: "UI", items: ["Tailwind CSS", "shadcn/ui", "Aceternity UI", "Bootstrap", "MUI"] },
-  { group: "Databases", items: ["MongoDB", "MySQL", "Postgres"] },
-  { group: "DevOps", items: ["Linux", "Git", "GitHub Actions", "Docker", "AWS"] },
+  { group: "Databases", items: ["MongoDB", "Postgres", "MySQL", "ClickHouse"] },
+  { group: "DevOps", items: ["Linux", "Git", "GitHub Actions", "Docker", "AWS", "Cloudflare", "Coolify"] },
+  { group: "Testing", items: ["Jest", "Vitest", "Playwright"] },
   { group: "Other", items: ["GraphQL", "REST APIs", "PayloadCMS", "Figma to Code"] },
 ];
 
@@ -61,7 +63,7 @@ export default function Home() {
             I&apos;m Muhammad Furqan
           </h1>
           <p className="mt-6 text-xl leading-7 text-muted-foreground">
-            I am a full-stack developer with extensive experience in building mobile and web applications from concept to deployment.
+            I&apos;m a full-stack developer with 15 years of experience building web and mobile products from concept to deployment. Lately I build AI-first, integrating LLMs and shipping on the edge.
           </p>
           <div className="mt-5 -ml-2">
             {socials.map(({ label, href, Icon }) => (
