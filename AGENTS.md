@@ -1,9 +1,42 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Notes for coding agents
 
-# This is NOT the Next.js you know
+This is a hand-written static site. There is **no framework, no build step, no package manager**.
+Do not add one, and do not introduce `package.json`, a bundler, TypeScript, or a CSS framework
+unless the owner explicitly asks.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## Rules
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+- Everything in the repo root is served verbatim by GitHub Pages. A file you add is a file that
+  ships.
+- Reference assets with root-relative paths (`/styles.css`), not relative ones.
+- Keep `index.html`, `styles.css` and `main.js` as the only three page files. New styles go in
+  `styles.css`, not in `<style>` blocks or inline `style=` attributes.
+- `main.js` is plain ES5-compatible script in an IIFE, loaded with `defer`. No modules, no imports,
+  no dependencies.
+- Design tokens are CSS custom properties at the top of `styles.css`. Use them; never hardcode a
+  hex value in a rule.
+- The inline script in `<head>` sets `data-theme` before first paint. Do not move it to `main.js` —
+  that reintroduces the theme flash.
 
-<!-- END:nextjs-agent-rules -->
+## Content lives in three places
+
+When you change a fact (a role, a project, a date, a link), update all three or the page and the
+structured data disagree:
+
+1. The visible markup in `index.html`
+2. The `application/ld+json` block in `index.html` (Person, ProfilePage, ItemList)
+3. `about.md` and `llms.txt`
+
+## Verifying a change
+
+Open `index.html` in a browser and check:
+
+- Both themes (click the toggle), at desktop and ~400px width
+- The console is clean
+- The canvas background still animates and survives a window resize
+- If you touched JSON-LD: paste it into the Google Rich Results Test or Schema Markup Validator
+
+## Deployment
+
+Push to this branch. GitHub Pages serves the root. `CNAME` holds the custom domain and `.nojekyll`
+stops Jekyll processing — do not delete either.

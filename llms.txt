@@ -1,0 +1,35 @@
+# Muhammad Furqan
+
+> Full-stack software engineer, fifteen years in. Takes web and mobile products from concept
+> to deployment; lately AI-first — LLM integration, MCP servers and inference on the edge.
+> Based in Karachi, Pakistan (UTC+5). Available for new work, remote.
+
+Contact: hello@furqan.codes · https://www.upwork.com/fl/muhammadf447
+
+## Pages
+
+- [Home](https://furqan.codes/): the full profile — selected work, experience, stack, education.
+- [About (Markdown)](https://furqan.codes/about.md): the same content as plain Markdown, for agents.
+
+## Selected work
+
+- [Hamara Hisaab](https://github.com/Furqankhanzada/hamara-hisaab): self-hosted household finance ledger — budgets, qarz, zakat, and a portfolio with PSX & MUFAP price tracking. API-first, so every feature is usable by AI agents over MCP or REST. Next.js / Postgres / MCP.
+- [SuqyaTech](https://github.com/Furqankhanzada/water-plant): delivery management for an RO water plant on PayloadCMS — customers, deliveries and billing, running a real business today. Live at https://ldw.furqan.codes/admin. PayloadCMS / MongoDB.
+- [ExploreBTK](https://github.com/Furqankhanzada/BTK-Finder): React Native directory app for discovering places, in production on Android and iOS. Live at https://explorebtk.com. React Native / Expo.
+- [Flutter eCommerce UI Kit](https://github.com/Furqankhanzada/flutter_eCommerce_ui_kit): open-source Flutter e-commerce UI kit, 476 stars and still in use. Flutter / open source.
+
+## Profiles
+
+- [GitHub](https://github.com/Furqankhanzada)
+- [LinkedIn](https://www.linkedin.com/in/muhammad-furqan-khanzada)
+- [X](https://x.com/Furqankhanzada1)
+- [Upwork](https://www.upwork.com/fl/muhammadf447): Top Rated, 100% job success, 65 contracts, 8,960 billed hours.
+
+## Stack
+
+- Languages: JavaScript, TypeScript, Python, PHP
+- Frameworks: React, React Native, Next.js, Expo, NestJS
+- AI: Claude Code, LLM integration, MCP, ML pipelines
+- Data: Postgres, MongoDB, MySQL, ClickHouse
+- Infrastructure: Linux, Docker, AWS, Cloudflare, GitHub Actions
+- Interfaces & testing: Tailwind, shadcn/ui, GraphQL, Playwright, Vitest

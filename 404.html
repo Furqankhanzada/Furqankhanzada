@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Not found — furqan.codes</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script>
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("fc-theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") {
+      t = (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) ? "light" : "dark";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<style>
+  .notfound {
+    padding: 160px 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .notfound .code {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .notfound h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    color: var(--ink-strong);
+  }
+  .notfound p {
+    margin: 0;
+    max-width: 48ch;
+    color: var(--ink-3);
+  }
+</style>
+</head>
+<body>
+<main class="container">
+  <section class="notfound">
+    <span class="code">404 — not found</span>
+    <h1>That page doesn't exist.</h1>
+    <p>The site is a single page. Everything lives at the root.</p>
+    <a class="btn-primary" href="/">Back to furqan.codes</a>
+  </section>
+</main>
+</body>
+</html>
