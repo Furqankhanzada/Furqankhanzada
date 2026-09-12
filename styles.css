@@ -31,13 +31,15 @@
   --ink-3: #4b4c52;
   --muted: #66675f;
   --label: #66675f;
-  --accent: #0d8168;
+  /* #0b735c clears WCAG AA (5.32:1 on --bg); the handoff's #0d8168 was 4.42:1,
+     just under, and this accent carries 12-13px labels and links. */
+  --accent: #0b735c;
   --accent-hi: #0a6a55;
   --btn-fg: #ffffff;
   --rule: rgba(12, 13, 15, 0.14);
   --underline: rgba(12, 13, 15, 0.3);
-  --accent-glow: rgba(13, 129, 104, 0.45);
-  --tint: rgba(13, 129, 104, 0.05);
+  --accent-glow: rgba(11, 115, 92, 0.45);
+  --tint: rgba(11, 115, 92, 0.05);
   --scrim-a: rgba(246, 245, 242, 0.72);
   --chip: rgba(12, 13, 15, 0.05);
   --nav-bg: rgba(246, 245, 242, 0.7);

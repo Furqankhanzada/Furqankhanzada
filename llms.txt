@@ -14,7 +14,7 @@ Contact: hello@furqan.codes · https://www.upwork.com/fl/muhammadf447
 ## Selected work
 
 - [Hamara Hisaab](https://github.com/Furqankhanzada/hamara-hisaab): self-hosted household finance ledger — budgets, qarz, zakat, and a portfolio with PSX & MUFAP price tracking. API-first, so every feature is usable by AI agents over MCP or REST. Next.js / Postgres / MCP.
-- [SuqyaTech](https://github.com/Furqankhanzada/water-plant): delivery management for an RO water plant on PayloadCMS — customers, deliveries and billing, running a real business today. Live at https://ldw.furqan.codes/admin. PayloadCMS / MongoDB.
+- [SuqyaTech](https://github.com/Furqankhanzada/water-plant): delivery management for an RO water plant on PayloadCMS — customers, deliveries and billing, running a real business today. PayloadCMS / MongoDB.
 - [ExploreBTK](https://github.com/Furqankhanzada/BTK-Finder): React Native directory app for discovering places, in production on Android and iOS. Live at https://explorebtk.com. React Native / Expo.
 - [Flutter eCommerce UI Kit](https://github.com/Furqankhanzada/flutter_eCommerce_ui_kit): open-source Flutter e-commerce UI kit, 476 stars and still in use. Flutter / open source.
 

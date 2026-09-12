@@ -21,7 +21,7 @@ GitHub: https://github.com/Furqankhanzada/hamara-hisaab
 ### SuqyaTech
 Delivery management for an RO water plant, built on PayloadCMS — customers, deliveries and
 billing, running a real business today. PayloadCMS / MongoDB.
-Live: https://ldw.furqan.codes/admin · GitHub: https://github.com/Furqankhanzada/water-plant
+GitHub: https://github.com/Furqankhanzada/water-plant
 
 ### ExploreBTK
 React Native directory app for discovering places, in production on Android and iOS.

@@ -115,7 +115,7 @@
 
   function pal() {
     return currentTheme() === "light"
-      ? { accent: [13, 129, 104], ink: [30, 31, 35], lit: 0.5, dim: 0.22 }
+      ? { accent: [11, 115, 92], ink: [30, 31, 35], lit: 0.5, dim: 0.22 }
       : { accent: [122, 224, 198], ink: [240, 237, 230], lit: 0.42, dim: 0.17 };
   }
 
