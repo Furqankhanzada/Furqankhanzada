@@ -1,34 +1,32 @@
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList, navigationMenuTriggerStyle
-} from "@/components/ui/navigation-menu";
+
+import { buttonVariants } from "@/components/ui/button";
 import ToggleThemeMod from "@/components/toggle-theme-mod";
+
+const links = [
+  { href: "#work", label: "Work" },
+  { href: "#skills", label: "Skills" },
+  { href: "https://www.upwork.com/fl/muhammadf447", label: "Upwork", external: true },
+];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()} target="_blank" href="https://www.upwork.com/fl/muhammadf447">
-                Upwork
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="flex flex-1 justify-end">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60">
+      <nav className="mx-auto flex h-14 w-full max-w-[1400px] items-center px-6 sm:px-8">
+        {links.map(({ href, label, external }) => (
+          <Link
+            key={href}
+            href={href}
+            className={buttonVariants({ variant: "ghost" })}
+            {...(external && { target: "_blank", rel: "noreferrer" })}
+          >
+            {label}
+          </Link>
+        ))}
+        <div className="ml-auto">
           <ToggleThemeMod />
         </div>
-      </div>
+      </nav>
     </header>
-  )
+  );
 }
