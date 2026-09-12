@@ -565,6 +565,79 @@ a:hover {
   padding-bottom: 3px;
 }
 
+/* Consent banner */
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(1.5) blur(16px);
+  backdrop-filter: saturate(1.5) blur(16px);
+  border-top: 1px solid var(--rule);
+}
+
+.consent-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.consent-text {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+.consent-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.consent-btn {
+  border: 0;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.consent-accept {
+  background: var(--accent);
+  color: var(--btn-fg);
+  font-weight: 500;
+  padding: 11px 22px;
+  transition: background 160ms ease;
+}
+
+.consent-accept:hover {
+  background: var(--accent-hi);
+}
+
+.consent-decline {
+  background: none;
+  color: var(--muted);
+  padding: 11px 0;
+  transition: color 160ms ease;
+}
+
+.consent-decline:hover {
+  color: var(--accent);
+}
+
 /* Footer */
 .site-footer {
   padding: 24px 0 44px;

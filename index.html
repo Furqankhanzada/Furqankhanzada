@@ -38,8 +38,38 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css">
+
+<!-- Consent Mode v2 defaults. MUST stay above the GTM snippet: tags that fire
+     before these defaults land would set cookies without consent. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "granted",
+    security_storage: "granted",
+    wait_for_update: 500
+  });
+  // Re-apply an earlier choice before GTM loads, so a returning visitor
+  // is measured from their first pageview rather than their second.
+  try {
+    if (localStorage.getItem("fc-consent") === "granted") {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted"
+      });
+    }
+  } catch (e) {}
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -186,13 +216,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 </head>
-<body> 
+<body>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MK54KKJB"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
- 
+
 <a class="skip-link" href="#top">Skip to content</a>
 
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
@@ -436,6 +466,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
 </main>
+
+<div class="consent" id="consent" role="region" aria-label="Analytics cookies" hidden>
+  <div class="consent-inner">
+    <p class="consent-text">I use analytics cookies to see which pages get read. Nothing is stored until you choose.</p>
+    <div class="consent-actions">
+      <button type="button" class="consent-btn consent-accept" id="consent-accept">Allow</button>
+      <button type="button" class="consent-btn consent-decline" id="consent-decline">No thanks</button>
+    </div>
+  </div>
+</div>
 
 <script src="/main.js" defer></script>
 </body>

@@ -9,15 +9,19 @@ unless the owner explicitly asks.
 - Everything in the repo root is served verbatim by GitHub Pages. A file you add is a file that
   ships.
 - Reference assets with root-relative paths (`/styles.css`), not relative ones.
-- Keep `index.html`, `styles.css` and `main.js` as the only three page files.
-  `README.md` is the GitHub **profile** README, not this site's docs — those live in `SITE.md`. New styles go in
+- Keep `index.html`, `styles.css` and `main.js` as the only three page files. New styles go in
   `styles.css`, not in `<style>` blocks or inline `style=` attributes.
+- `README.md` is the GitHub **profile** README for `Furqankhanzada/Furqankhanzada` and renders on
+  the profile page. Do not edit it for site reasons — this site's docs live in `SITE.md`.
 - `main.js` is plain ES5-compatible script in an IIFE, loaded with `defer`. No modules, no imports,
   no dependencies.
 - Design tokens are CSS custom properties at the top of `styles.css`. Use them; never hardcode a
   hex value in a rule.
 - The inline script in `<head>` sets `data-theme` before first paint. Do not move it to `main.js` —
   that reintroduces the theme flash.
+- The Consent Mode `default` block must stay **above** the GTM snippet in `<head>`. Tags that fire
+  before those defaults land would set cookies without consent. The banner in `main.js` only
+  records the choice (`localStorage["fc-consent"]`) and sends `consent: update`.
 
 ## Content lives in three places
 

@@ -41,6 +41,39 @@
     });
   }
 
+  /* ---------- Analytics consent ---------- */
+
+  // Consent Mode defaults are set in the <head>, above the GTM snippet, so
+  // nothing is stored before a choice is made. This only records the choice
+  // and tells Google about it.
+  var consent = document.getElementById("consent");
+  var accept = document.getElementById("consent-accept");
+  var decline = document.getElementById("consent-decline");
+
+  function storedConsent() {
+    try { return localStorage.getItem("fc-consent"); } catch (e) { return null; }
+  }
+
+  function decide(choice) {
+    try { localStorage.setItem("fc-consent", choice); } catch (e) {}
+    if (typeof window.gtag === "function") {
+      var state = choice === "granted" ? "granted" : "denied";
+      window.gtag("consent", "update", {
+        ad_storage: state,
+        ad_user_data: state,
+        ad_personalization: state,
+        analytics_storage: state
+      });
+    }
+    if (consent) consent.setAttribute("hidden", "");
+  }
+
+  if (consent && accept && decline) {
+    if (!storedConsent()) consent.removeAttribute("hidden");
+    accept.addEventListener("click", function () { decide("granted"); });
+    decline.addEventListener("click", function () { decide("denied"); });
+  }
+
   /* ---------- Token-stream background ---------- */
 
   // A slow vertical drift of tokenized-prompt fragments, a minority lit in the
